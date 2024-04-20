@@ -1,0 +1,1 @@
+export { default as EasyIcon } from './EasyIcon';
