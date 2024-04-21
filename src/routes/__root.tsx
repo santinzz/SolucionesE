@@ -4,8 +4,6 @@ import { useState } from 'react';
 const Root = () => {
   const [isMenuPressed, setIsMenuPressed] = useState<boolean>(false);
 
-  console.log(isMenuPressed);
-
   const handleClick = () => {
     setIsMenuPressed(!isMenuPressed);
   };
