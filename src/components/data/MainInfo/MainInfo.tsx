@@ -4,14 +4,14 @@ const MainInfo = () => {
 	return (
 		<div className='mt-20 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-400 to-blue-700 text-white p-6'>
         <article className='flex flex-col items-center space-y-6'>
-          <h3 className='lg:text-4xl font-extrabold'>
+          <h3 className='lg:text-4xl md:text-3xl text-2xl text-center font-extrabold'>
             Algunos de los servicios que ofrecemos
           </h3>
-          <div className='grid gap-6 max-w-7xl grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))]'>
+          <div className='grid gap-6 max-w-7xl grid-cols-1 md:grid-cols-2 xl:grid-cols-4'>
             {servicesData.map(({ title, description, id }) => (
               <article
                 key={id}
-                className={`w-[300px] flex flex-col bg-white text-slate-800 p-4 rounded-md shadow-sm h-48 ${id % 2 === 0 && 'mt-12'}`}
+                className={`w-[300px] flex flex-col bg-white text-slate-800 p-4 rounded-md shadow-sm h-48 ${id % 2 === 0 && 'md:mt-8 lg:mt-12 mt-0'}`}
               >
                 <header>
                   <h4 className='text-2xl font-bold'>{title}</h4>

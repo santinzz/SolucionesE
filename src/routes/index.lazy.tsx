@@ -1,7 +1,7 @@
 import { createLazyFileRoute } from '@tanstack/react-router';
 import { Hero, MainInfo } from '@/components/data';
 
-export const Route = createLazyFileRoute('/' as never)({
+export const Route = createLazyFileRoute('/')({
   component: Index,
 });
 

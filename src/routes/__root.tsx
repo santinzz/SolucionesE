@@ -1,23 +1,11 @@
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const Root = () => {
-  const [isMenuPressed, setIsMenuPressed] = useState<boolean>(true);
+  const [isMenuPressed, setIsMenuPressed] = useState<boolean>(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setIsMenuPressed(true);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  console.log(isMenuPressed);
 
   const handleClick = () => {
     setIsMenuPressed(!isMenuPressed);
@@ -35,13 +23,13 @@ const Root = () => {
           </h1>
         </nav>
         <nav
-          className={`flex gap-8 sm:gap-4 flex-col md:flex-row md:static duration-200 pb-8 md:pb-0 bg-white mx-auto absolute top-28 right-0 transform mr-0 md:mr-4 md:w-auto w-screen ${isMenuPressed ? 'translate-x-0 items-center' : 'translate-x-[130%]'}`}
+          className={`flex gap-8 sm:gap-4 flex-col md:flex-row md:static duration-200 pb-8 md:pb-0 bg-white mx-auto absolute top-28 right-0 transform mr-0 md:mr-4 md:w-auto w-screen ${isMenuPressed ? 'translate-x-0 items-center' : 'translate-x-[130%] md:translate-x-0'}`}
         >
           <Link
             to='/'
             className='[&.active]:text-slate-800 [&.active]:underline underline-offset-4 text-slate-800/40 hover:text-slate-800/80 duration-200 text-lg'
           >
-            Home
+            Inicio
           </Link>
           <Link
             to='/nosotros'
@@ -63,7 +51,7 @@ const Root = () => {
           </Link>
         </nav>
         <nav className='md:hidden'>
-          <div className='grid gap-[0.65rem] w-10' onClick={handleClick}>
+          <div className='grid gap-[0.65rem] w-10 mr-4' onClick={handleClick}>
             <div
               className={`h-1 rounded-full bg-slate-800 w-full duration-300 origin-left ${isMenuPressed ? 'rotate-45' : 'rotate-0'}`}
             ></div>
