@@ -28,7 +28,7 @@ const MainInfo = () => {
             <div className='flex-1'>
               <img
                 className='rounded-lg rounded-r-none w-full'
-                src='./service.png'
+                src='./service.webp'
                 alt='Imagen de representacion de servicio'
               />
             </div>

@@ -1,5 +1,4 @@
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router';
-import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import { useState } from 'react';
 
 const Root = () => {
@@ -16,7 +15,7 @@ const Root = () => {
       <header className='px-4 py-14 flex gap-2 items-center justify-between font-["Poppins"] w-full fixed top-0 h-20 bg-white mx-auto text-slate-800 shadow-sm'>
         <nav className='flex gap-2 items-center'>
           <Link to='/'>
-            <img src='./logo.png' className='w-28 h-auto' />
+            <img src='./logo.png' className='w-28 h-auto' alt='Logo de la empresa soluciones empresariales'/>
           </Link>
           <h1 className='text-xl font-bold hidden lg:block'>
             Soluciones Empresariales
@@ -27,25 +26,25 @@ const Root = () => {
         >
           <Link
             to='/'
-            className='[&.active]:text-slate-800 [&.active]:underline underline-offset-4 text-slate-800/40 hover:text-slate-800/80 duration-200 text-lg'
+            className='[&.active]:text-slate-800 [&.active]:underline underline-offset-4 text-slate-800/70 hover:text-slate-800/80 duration-200 text-lg'
           >
             Inicio
           </Link>
           <Link
             to='/nosotros'
-            className='[&.active]:text-slate-800 [&.active]:underline underline-offset-4 text-slate-800/40 duration-200 hover:text-slate-800/80 text-lg'
+            className='[&.active]:text-slate-800 [&.active]:underline underline-offset-4 text-slate-800/70 duration-200 hover:text-slate-800/80 text-lg'
           >
             Nosotros
           </Link>
           <Link
             to='/servicios'
-            className='[&.active]:text-slate-800 [&.active]:underline underline-offset-4 text-slate-800/40 duration-200 hover:text-slate-800/80 text-lg'
+            className='[&.active]:text-slate-800 [&.active]:underline underline-offset-4 text-slate-800/70 duration-200 hover:text-slate-800/80 text-lg'
           >
             Servicios
           </Link>
           <Link
             to='/contacto'
-            className='[&.active]:text-slate-800 [&.active]:underline underline-offset-4 text-slate-800/40 duration-200 hover:text-slate-800/80 text-lg'
+            className='[&.active]:text-slate-800 [&.active]:underline underline-offset-4 text-slate-800/70 duration-200 hover:text-slate-800/80 text-lg'
           >
             Contacto
           </Link>
@@ -66,7 +65,6 @@ const Root = () => {
       </header>
       <hr />
       <Outlet />
-      <TanStackRouterDevtools />
     </>
   );
 };
