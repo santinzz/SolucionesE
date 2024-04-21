@@ -7,7 +7,7 @@ const MainInfo = () => {
           <h3 className='lg:text-4xl font-extrabold'>
             Algunos de los servicios que ofrecemos
           </h3>
-          <div className='grid gap-6 max-w-7xl grid-cols-[repeat(auto-fill,_minmax(300px,_1fr))]'>
+          <div className='grid gap-6 max-w-7xl grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))]'>
             {servicesData.map(({ title, description, id }) => (
               <article
                 key={id}
@@ -24,10 +24,10 @@ const MainInfo = () => {
         </article>
         <article className='flex flex-col items-center space-y-4 mt-10 max-w-6xl mx-auto'>
           <h3 className='lg:text-4xl font-extrabold'>¿Por qué elegirnos?</h3>
-          <article className='rounded-lg bg-white flex text-slate-800'>
+          <article className='rounded-lg bg-white flex flex-col md:flex-row text-slate-800'>
             <div className='flex-1'>
               <img
-                className='rounded-lg rounded-r-none'
+                className='rounded-lg rounded-r-none w-full'
                 src='./service.png'
                 alt='Imagen de representacion de servicio'
               />

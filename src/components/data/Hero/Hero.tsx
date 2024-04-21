@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <article className='mt-20 flex flex-col items-center max-w-6xl mx-auto text-slate-800'>
+    <article className='mt-28 flex flex-col items-center max-w-6xl mx-auto text-slate-800'>
       <h1 className='lg:text-6xl sm:text-4xl md:text-5xl font-extrabold text-3xl text-center mb-4'>
         Transforma tu gestión de nómina
       </h1>

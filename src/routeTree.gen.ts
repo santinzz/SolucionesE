@@ -17,7 +17,9 @@ import { Route as rootRoute } from './routes/__root'
 // Create Virtual Routes
 
 const IndexLazyImport = createFileRoute('/')()
-const AboutIndexLazyImport = createFileRoute('/about/')()
+const ServiciosIndexLazyImport = createFileRoute('/servicios/')()
+const NosotrosIndexLazyImport = createFileRoute('/nosotros/')()
+const ContactoIndexLazyImport = createFileRoute('/contacto/')()
 
 // Create/Update Routes
 
@@ -26,10 +28,26 @@ const IndexLazyRoute = IndexLazyImport.update({
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
 
-const AboutIndexLazyRoute = AboutIndexLazyImport.update({
-  path: '/about/',
+const ServiciosIndexLazyRoute = ServiciosIndexLazyImport.update({
+  path: '/servicios/',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/about/index.lazy').then((d) => d.Route))
+} as any).lazy(() =>
+  import('./routes/servicios/index.lazy').then((d) => d.Route),
+)
+
+const NosotrosIndexLazyRoute = NosotrosIndexLazyImport.update({
+  path: '/nosotros/',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() =>
+  import('./routes/nosotros/index.lazy').then((d) => d.Route),
+)
+
+const ContactoIndexLazyRoute = ContactoIndexLazyImport.update({
+  path: '/contacto/',
+  getParentRoute: () => rootRoute,
+} as any).lazy(() =>
+  import('./routes/contacto/index.lazy').then((d) => d.Route),
+)
 
 // Populate the FileRoutesByPath interface
 
@@ -39,8 +57,16 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexLazyImport
       parentRoute: typeof rootRoute
     }
-    '/about/': {
-      preLoaderRoute: typeof AboutIndexLazyImport
+    '/contacto/': {
+      preLoaderRoute: typeof ContactoIndexLazyImport
+      parentRoute: typeof rootRoute
+    }
+    '/nosotros/': {
+      preLoaderRoute: typeof NosotrosIndexLazyImport
+      parentRoute: typeof rootRoute
+    }
+    '/servicios/': {
+      preLoaderRoute: typeof ServiciosIndexLazyImport
       parentRoute: typeof rootRoute
     }
   }
@@ -50,7 +76,9 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren([
   IndexLazyRoute,
-  AboutIndexLazyRoute,
+  ContactoIndexLazyRoute,
+  NosotrosIndexLazyRoute,
+  ServiciosIndexLazyRoute,
 ])
 
 /* prettier-ignore-end */
