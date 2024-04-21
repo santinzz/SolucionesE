@@ -23,7 +23,7 @@ const MainInfo = () => {
           </div>
         </article>
         <article className='flex flex-col items-center space-y-4 mt-10 max-w-6xl mx-auto'>
-          <h3 className='lg:text-4xl font-extrabold'>¿Por qué elegirnos?</h3>
+          <h4 className='lg:text-4xl font-extrabold'>¿Por qué elegirnos?</h4>
           <article className='rounded-lg bg-white flex flex-col md:flex-row text-slate-800'>
             <div className='flex-1'>
               <img

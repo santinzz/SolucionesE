@@ -1,9 +1,9 @@
 const Hero = () => {
   return (
     <article className='mt-28 flex flex-col items-center max-w-6xl mx-auto text-slate-800'>
-      <h1 className='lg:text-6xl sm:text-4xl md:text-5xl font-extrabold text-3xl text-center mb-4'>
+      <h2 className='lg:text-6xl sm:text-4xl md:text-5xl font-extrabold text-3xl text-center mb-4'>
         Transforma tu gestión de nómina
-      </h1>
+      </h2>
       <p className='text-center max-w-[70ch] mx-auto'>
         ¡Optimiza la gestión de tu nómina con NominaTISS-SAT! Con 30 años de
         experiencia, garantizamos una administración impecable ante el IMSS,
